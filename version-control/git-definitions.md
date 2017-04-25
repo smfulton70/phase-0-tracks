@@ -6,6 +6,7 @@
 
 * What is a branch and why would you use one? A branch is a copy of the master version, and you use it to do your own work, which you will then merge into the master version.
 
+
 * What is a commit? What makes a good commit message? A commit is when the change that you make to file(s) is recorded within your local repository. A good commit message should be specific about what change was made to the file.
 
 
