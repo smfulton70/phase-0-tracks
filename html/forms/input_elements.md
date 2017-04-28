@@ -1,3 +1,4 @@
+
 Type: Text. This allows you to input any string.
 Type: Email. This allows you to input a password, and I suspect it checks for a valid email format.
 Type: Password. This allows you to create a password, and it probably has complexity requirements. It masks the characters.
