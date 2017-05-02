@@ -1,3 +1,31 @@
-#contact-info{font-size: .8em;}
-.job {background-color: #e9e5dc; border-radius: 10px; padding: 5px; margin-top: 8px;}
-.duties {font-size: .8em;}
+#contact-info{
+	font-size: .8em;
+}
+/*Release 1: Give additional styling to each section with a 'job' class*/
+.job {
+	background-color: #e9e5dc; 
+	border-radius: 10px; 
+	padding: 5px; 
+	margin-top: 8px;
+}
+/*Release 1: reduce size of text in each unordered list of accomplishments*/
+.duties {
+	font-size: .8em;
+}
+/*Release 2: Use the hover pseudo-selector so that the link of any 'a' tag turns green when the user hovers over it.*/
+a:hover{
+  color: green;
+}
+/*Release 2: Make the first list item in each unordered list appear with purple text by using the first-of-type pseudo-selector.*/
+ul li:first-of-type{
+  color: purple;
+}
+/*Release 2: Make any section under the section with the ID of volunteer-experience
+have a black background and white text*/
+section#volunteer-experience section {
+	background-color: #000000; 
+	border-radius: 15px; 
+	padding: 5px; 
+	margin-top: 8px;
+    color: #ffffff;
+}
