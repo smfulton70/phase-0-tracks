@@ -1,0 +1,25 @@
+.fully-dressed-octopus{
+	position: relative;
+	top: 20px;
+	margin: auto;
+	width: 275px;
+}
+
+.octopus {
+	position: relative;
+	left: 17px;
+}
+
+.glasses {
+	position: relative;
+	top: 160px;
+	left: 59px;
+	z-index: 1;
+}
+
+.hat {
+	position: relative;
+	top: 160px;
+	left: 0px;
+	z-index: 1;
+}
