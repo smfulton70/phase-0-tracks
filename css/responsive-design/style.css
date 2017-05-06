@@ -51,22 +51,65 @@ figcaption {
   body {
   background-color: hotpink;
   }
+  h1 {
+    font-size: 1.5em;
+  }
   #external-links{
-  max-width: 100%;
-  position: absolute;
-  bottom: -700px;
-  display: inline-block;
-
+    width:100%;
+    position: absolute;
+    top: 1400px;
   /*vertical-align: baseline;*/
   }
   main {
     max-width: 100%;
-    display: inline-block;
+    vertical-align: top;
+    /*display: inline-block;*/
   }
-  body {
+  
+  #external-links ul{
+    font-size: 20px;
+  }
+}
 
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.5em;
   }
 
+  #external-links{
+    width:100%;
+    position: absolute;
+    top: 1550px;
+  /*vertical-align: baseline;*/
+  }
+  main {
+    max-width: 100%;
+    vertical-align: top;
+    /*display: inline-block;*/
+  }
+  
+  #external-links ul{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  #external-links{
+    width:100%;
+    position: absolute;
+    top: 1550px;
+  /*vertical-align: baseline;*/
+  }
+  main {
+    max-width: 100%;
+    vertical-align: top;
+    /*display: inline-block;*/
+  }
+  
   #external-links ul{
     font-size: 20px;
   }
