@@ -1,0 +1,7 @@
+In this scenario, a robot is facing a bank of three elevators. There is an elevator directly in front of it, and there is an elevator on the left and an elevator the right. The floor number on which it is currently standing is posted above the elevators. There is a panel in front of the robot that has two buttons, one for "up", and one for "down". For the sake of this scenario, I'm assuming that I am riding with it and I am the one who wants to go to a specific floor and it needs to ask me what floor I want to go to. Then, the rest is in its hands.
+
+-Robot looks up at "Floor number" sign and reads it and stores that number in its memory, as a variable called currentFloor.
+-Robot asks me, "What floor would you like to go to?"
+-I respond with my desired floor, which robot stores that number in its memory as a variable called desiredFloor.
+	-If desiredFloor greater than currentFloor, then robot pushes Up button.
+	-if desiredFloor less than currentFloor, then robot pushes Down button.
