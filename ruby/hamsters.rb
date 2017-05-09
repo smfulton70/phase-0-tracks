@@ -6,12 +6,19 @@ puts "What is your hamster's fur color?"
 furColor = gets.chomp
 puts "Is your hamster a good candidate for adoption? Yes or No"
 adoption = gets.chomp
-if (adoption == "")
-	adoption = nil
-elsif (adoption=="y"||adoption=="Y"||adoption=="yes"||adoption=="Yes")
+case adoption
+when "Y","y","Yes","yes"
 	adoption="true"
+when "","0"
+	adoption=nil
 else adoption="false"
 end
+# if (adoption == "")
+#	adoption = nil
+#elsif (adoption=="y"||adoption=="Y"||adoption=="yes"||adoption=="Yes")
+#	adoption="true"
+#else adoption="false"
+#end
 puts "What is your hamster's estimate age?"
 age = gets.chomp
 if (age == "" || age == "0")
