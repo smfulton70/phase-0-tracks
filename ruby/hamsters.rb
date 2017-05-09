@@ -8,11 +8,14 @@ puts "Is your hamster a good candidate for adoption? Yes or No"
 adoption = gets.chomp
 if (adoption == "")
 	adoption = nil
+elsif (adoption=="y"||adoption=="Y"||adoption=="yes"||adoption=="Yes")
+	adoption="true"
+else adoption="false"
 end
 puts "What is your hamster's estimate age?"
 age = gets.chomp
-if age == ""
-	age = "nil"
+if (age == "" || age == "0")
+	age = nil
 end
 puts "Hamster's name: #{hamsterName}"
 puts "Hamster loudness: #{loudness}"
