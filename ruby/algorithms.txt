@@ -1,0 +1,44 @@
+Challenge 4.2 Algorithms
+
+Release 0: Equip Your New Robot
+
+In this scenario, a robot is facing a bank of three elevators. There is an elevator directly in front of it, and there is an elevator on the left and an elevator the right. The floor number on which it is currently standing is posted above the elevators. There is a panel in front of the robot that has two buttons, one for "up", and one for "down". For the sake of this scenario, I'm assuming that I am riding with it and I am the one who wants to go to a specific floor and it needs to ask me what floor I want to go to. Then, the rest is in its hands.
+
+-Robot looks up at "Floor number" sign and reads it and stores that number in its memory, as a variable called currentFloor.
+-Robot asks me, "What floor would you like to go to?"
+-I respond with my desired floor, which robot stores that number in its memory as a variable called desiredFloor.
+	-If desiredFloor greater than currentFloor, then robot pushes Up button.
+	-if desiredFloor less than currentFloor, then robot pushes Down button.
+-Robot waits for an elevator.
+	-If left elevator opens first, robot turns left and proceeds into elevator
+	-If middle elevator opens first, robot proceeds forward into elevator
+	-if right elevator opens first, robot turns right and proceeds into elevator
+-Once in elevator, robot retrieves desiredFloor variable from memory, and presses the button corresponding to the value of desiredFloor variable.
+
+Release 1: Find a Real-Life Algorithm. I chose "Driving a Car to Drop Off My Son at School"
+
+-Use key to unlock driver door by turning counter-clockwise
+-Open door
+-Get in car
+-Close door
+-Step down on clutch and keep it depressed
+-Place key in ignition
+-Turn key clockwise to start engine
+-Move stick shift to far right, and pull toward driver
+-Check rear-view mirror to see if another car is coming. If a car is coming:
+	-Wait until the car is gone
+If car is not coming:
+	-Slowly ease up on clutch while stepping gracefully on gas
+-When car's bumper is into the street, turn wheel counter-clockwise
+-When car is parallel to street, apply brakes
+-Turn wheel clockwise to straighten it
+-Depress clutch again and push stick shift forward and then left and then forward
+-Drive until yield sign, then turn right onto Huntington Dr.
+-Drive until stop sign, and turn left onto Loretto Dr.
+-Drive until traffic light, and turn left onto Rocky Ridge Dr.
+-Drive until second traffic light, and turn left onto McLaren Dr.
+-Drive until second stop sign, and turn right onto Champion Oaks Dr.
+-Drive until next stop sign, and turn left onto N. Cirby Way
+-Drive until you get to Ridgecrest Way, and turn right.
+-Once you see 1200 Ridgecrest Way on right, apply brakes and pull into school drop-off circle
+-Son will get out of car at this point
