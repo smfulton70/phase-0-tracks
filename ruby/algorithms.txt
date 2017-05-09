@@ -5,3 +5,8 @@ In this scenario, a robot is facing a bank of three elevators. There is an eleva
 -I respond with my desired floor, which robot stores that number in its memory as a variable called desiredFloor.
 	-If desiredFloor greater than currentFloor, then robot pushes Up button.
 	-if desiredFloor less than currentFloor, then robot pushes Down button.
+-Robot waits for an elevator.
+	-If left elevator opens first, robot turns left and proceeds into elevator
+	-If middle elevator opens first, robot proceeds forward into elevator
+	-if right elevator opens first, robot turns right and proceeds into elevator
+-Once in elevator, robot retrieves desiredFloor variable from memory, and presses the button corresponding to the value of desiredFloor variable.
