@@ -13,12 +13,14 @@ when "","0"
 	adoption=nil
 else adoption="false"
 end
+
 # if (adoption == "")
 #	adoption = nil
 #elsif (adoption=="y"||adoption=="Y"||adoption=="yes"||adoption=="Yes")
 #	adoption="true"
 #else adoption="false"
 #end
+
 puts "What is your hamster's estimate age?"
 age = gets.chomp
 if (age == "" || age == "0")
