@@ -8,10 +8,10 @@ puts "Is your hamster a good candidate for adoption? Yes or No"
 adoption = gets.chomp
 case adoption
 when "Y","y","Yes","yes","yeah","Yeah"
-	adoption="true"
+	adoption=true
 when ""
 	adoption=nil
-else adoption="false"
+else adoption=false
 end
 # if (adoption == "")
 #	adoption = nil
