@@ -17,9 +17,9 @@ end
 def decrypt(crypt)
   counter = 0
   alphabet = "abcdefghijklmnopqrstuvwz"
-  print alphabet[alphabet.index(newcrypt[counter]) - 1]
+  print alphabet[alphabet.index(crypt[counter]) - 1]
   counter = counter + 1
-  print alphabet[alphabet.index(newcrypt[counter]) - 1]
+  print alphabet[alphabet.index(crypt[counter]) - 1]
   # counter = counter + 1
   # print alphabet[alphabet.index(crypt[counter]) - 1]
   # counter += 1
