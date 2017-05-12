@@ -63,9 +63,6 @@ for i in 1..number_of_employees
 	if (age_correct == false) && (garlic_bread == true) && (health_insurance == true)
 		vampire_status = "Results inconclusive"
 	end
-
-		
-	
 	puts vampire_status
 	puts "_____________________"
 end
