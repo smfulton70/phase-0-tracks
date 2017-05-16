@@ -1,0 +1,47 @@
+1. A variable is a data item that can be assigned a value, and is capable of having its value changed multiple times throughout a program. A variable should be named appropriately, such that the name is clearly indicative of what data it represents.
+
+2. Ruby will evaluate the string represented by first_name ("Abraham") first, and will evaluate and append the string represented by last_name ("Lincoln"), and will put them together
+and it will be AbrahamLincoln.
+
+3. string is a data type consisting of a series of characters that may include letters, numbers, and special characters. If they are numbers, no mathematical operations can be performed on them. You might use strings for names, social security numbers, city of residence.
+
+An integer is any whole number such as 10, 1,000, 100,000, or -10, -1,000, or -100,000. These always represent numerical values, thus they are intended to be used for mathematical operations. Examples include age, weight, number of pets owned.
+
+A float is a number that includes a decimal point and several figures after the decimal point. Examples include 3.1415, 2.71828, and 42.0. Floats may be used for numbers that require much precision, such as in scientific applications. Examples would be measurements such as volume in milliliters, length in millimeters.
+
+A nil is a special entity in Ruby that indicates a false object. A nil value is returned when the last line of a method uses a puts statement. One way to use a nil is to assign a blank value to be nil.
+
+A boolean is a data type that evaluates to either true or false. You can create special variables that have a question mark in the end of its name, and these are typically booleans.
+
+4. An algorithm is a set of rules or calculations that a computer uses to process instructions.
+
+5. Two types of algorithms are: searching and sorting. This is an algorithm that sorts data into an order that is more useful. Another type is pattern matching and parsing. This is useful when you want to extract data that has a certain pattern found.
+
+6. A method is a self-contained routine that is part of a program, and it processes input (arguments) and returns a value when the method is called. Programmers use methods to manipulate data types.
+
+
+7. Return value is the value that gets returned from a method when that method is called. In Ruby, there is always at least an implicit return value in a method, which is the value of the last evaluated expression within the method.
+
+A side effect is something that a method does other than returning a value. It could be something such as mutating a global variable or writing to a file. Generally side effects are not desirable at all.
+
+A parameter is one or more data items that a method can accept and use as input.
+
+An argument is one or more data items that can be passed to a method as input. Arguments in method calls correspond to parameters in method definitions.
+
+Implicit return is the value that gets returned from a method when the keyword "return" is not used. It is the value of that last evaluated expression within the method.
+
+8. Global scope refers to data variables that are accessible throughout the entire program. But local scope refers to data variables that are accessible only within a method.
+
+9. Control flow refers to ensuring that certain statements are executed only when certain condition(s) are met.
+
+Loop is something that you perform when you want to have a set of instructions get repeated a number of times.
+
+If is the keyword used to construct a conditional test that needs to evaluate as true in order for some statements to execute.
+
+Else is the keyword used to describe statements to execute in the event that the if construct does not evaluate to true.
+
+Elsif is the keyword used to describe a secondary if statement that gets evaluated if the first if statement does not evaluate to true.
+
+While is a keyword used to begin a loop that will begin as long as a certain condition is true.
+
+Until is a keyword used to begin a loop that will continue to iterate up to the point where a certain condition is true, at which point the loop will terminate.
