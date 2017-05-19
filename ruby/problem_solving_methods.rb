@@ -1,5 +1,5 @@
 def array_search (array, integer)
- 	counter = 0
+	counter = 0
  	# Iterate through each number in array to see if it matches the passed integer
  	array.each do |number| 
  		if number == integer 
@@ -10,7 +10,7 @@ def array_search (array, integer)
  		else counter+=1
  		end
  	end
-end
+ end
 
 # Create an array called my_array
 my_array = [2,4,6,8,10,12,14,16,18,20]
