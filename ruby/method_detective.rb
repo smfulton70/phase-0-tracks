@@ -8,6 +8,7 @@
 # => “InVeStIgAtIoN”
 
 # "zom".insert(1, "o")
+# "zom".insert(2, "o")
 # => “zoom”
 
 # "enhance".center(15)
