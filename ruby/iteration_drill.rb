@@ -5,11 +5,30 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
-# ----
+zombie_apocalypse_supplies.each do |value|
+	if zombie_apocalypse_supplies.last == value
+		print value
+	else print "#{value}*"
+	end
+end
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
-# ----
+counter = 0
+# while (zombie_apocalypse_supplies[counter] != nil) && (zombie_apocalypse_supplies[counter+1] != nil) && (swapped == false)
+loop do	
+	swapped = false
+	if (zombie_apocalypse_supplies[counter] > zombie_apocalypse_supplies[counter+1])
+		temp = zombie_apocalypse_supplies[counter]
+		zombie_apocalypse_supplies[counter] = zombie_apocalypse_supplies[counter+1]
+		zombie_apocalypse_supplies[counter+1] = temp
+		swapped = true
+	end
+	counter+=1
+	break if not swapped
+end
+
+print zombie_apocalypse_supplies
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
