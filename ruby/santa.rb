@@ -32,7 +32,8 @@ end
 # my_santa.speak
 
 gender_array = ["male","female","cisgender","transgender","androgynous","gender fluid","metrosexual","lumbersexual"]
-ethnicity_array = ["Mexican","Canadian","Slovenian","Finnish","Korean","Paraguayan","Egyptian","Israeli"]
+ethnicity_array = ["Mexican","Canadian","Slovenian","Finnish","Korean","Paraguayan","Egyptian","Israeli","Icelandic",
+	"Venezuelan","Bahamanian","Estonian","Mongolian","Burmese","Thai","Somalian","Albanian","Kazakh","Armenian"]
 santa_array = Array.new
 
 counter=0
