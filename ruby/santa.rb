@@ -1,6 +1,6 @@
 class Santa
-	attr_accessor :gender
-	attr_reader :age, :ethnicity
+	attr_accessor :gender, :age
+	attr_reader :ethnicity
 
 	def initialize(gender,ethnicity)
 		puts "Initializing Santa instance..."
@@ -22,7 +22,6 @@ class Santa
 		current_index_of_deer = @reindeer_ranking.index(name)
 		@reindeer_ranking.rotate!(7 - current_index_of_deer)
 	end
-	
 end
 
 # my_santa = Santa.new
@@ -55,5 +54,13 @@ puts santa_array[4].gender="gender fluid"
 puts santa_array[4].age
 puts santa_array[4].ethnicity 
 
+santa_100 = Array.new
+100.times do |x|
+	santa_100[x] = Santa.new(gender_array.sample,ethnicity_array.sample)
+	santa_100[x].age = rand(140)
+end
 
+100.times do |x|
+	puts "Santa ##{x+1}: Age is #{santa_100[x].age}, Gender is #{santa_100[x].gender}, Ethnicity is #{santa_100[x].ethnicity}"
+end
 
