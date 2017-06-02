@@ -1,5 +1,10 @@
 // RELEASE 0
 
+/*Create a function that takes an array of words as an argument. We set the first word in that array to be the longest word so far.
+We then iterate through the array of words and each time we encounter a word that is longer than the previous word, we establish this
+word to be the longest word so far. By the time we have iterated through the entire array of words, we return the longest word so far.
+If there are two or more words that are the longest words, the first word encountered gets returned.*/
+
 function longestPhrase(array){
 	var array_of_words = array;
 	var longest_phrase_so_far = array_of_words[0];
