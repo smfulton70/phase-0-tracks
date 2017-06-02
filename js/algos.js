@@ -31,6 +31,26 @@ function findKeyValueMatch(object1,object2){
     return match;
 }
 
+// RELEASE 2
+
+function randomTestData(integer){
+	var integer;
+	var array_of_strings = [];
+	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	for (i=0;i<integer;i++){
+		randomLengthOfStrings = Math.floor((Math.random() * 10) + 1);
+		array_of_strings[i] = "";
+		for (j=0;j<randomLengthOfStrings;j++){
+			array_of_strings[i] += possible.charAt(Math.floor((Math.random() * 62) + 1))
+		}
+	}
+	return "Here are the strings: " + array_of_strings[0] + " " + array_of_strings[1] + " " + array_of_strings[2];
+	//return randomLengthOfStrings;
+}
+
+
+
+
 // RELEASE 0 DRIVER CODE
 
 console.log(longestPhrase(["long phrase","longest phrase","longer phrase","Scott Michael Fulton","Supercalifragilisticexpialidocious"]));
@@ -40,5 +60,6 @@ console.log(longestPhrase(["Scott Michael Fulton","Dev Bootcamp","Fiery Skippers
 
 console.log(findKeyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}))
 console.log(findKeyValueMatch({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}))
-console.log(findKeyValueMatch({name: "Scott", age: '47', address: "1717 Tanglewood Ln"},{name: "Robyn", age: 42, address: "1717 Tanglewood Ln"}))
+console.log(findKeyValueMatch({name: "Scott", age: 47, address: "1717 Tanglewood Ln"},{name: "Robyn", age: 47, address: "1718 Tanglewood Ln"}))
 
+console.log(randomTestData(3));
