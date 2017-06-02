@@ -36,20 +36,23 @@ function findKeyValueMatch(object1,object2){
 function randomTestData(integer){
 	var integer;
 	var array_of_strings = [];
-	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	var possibleCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 	for (i=0;i<integer;i++){
 		randomLengthOfStrings = Math.floor((Math.random() * 10) + 1);
 		array_of_strings[i] = "";
 		for (j=0;j<randomLengthOfStrings;j++){
-			array_of_strings[i] += possible.charAt(Math.floor((Math.random() * 62) + 1))
+			array_of_strings[i] += possibleCharacters.charAt(Math.floor((Math.random() * 62) + 1))
 		}
 	}
-	return "Here are the strings: " + array_of_strings[0] + " " + array_of_strings[1] + " " + array_of_strings[2];
+	//for (i=0;i<integer;i++){
+		//console.log(array_of_strings[i]);
+	//}
+
+	return array_of_strings;
+
+	//return "Here are the strings: " + array_of_strings[0] + " " + array_of_strings[1] + " " + array_of_strings[2];
 	//return randomLengthOfStrings;
 }
-
-
-
 
 // RELEASE 0 DRIVER CODE
 
@@ -60,6 +63,15 @@ console.log(longestPhrase(["Scott Michael Fulton","Dev Bootcamp","Fiery Skippers
 
 console.log(findKeyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}))
 console.log(findKeyValueMatch({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}))
-console.log(findKeyValueMatch({name: "Scott", age: 47, address: "1717 Tanglewood Ln"},{name: "Robyn", age: 47, address: "1718 Tanglewood Ln"}))
+console.log(findKeyValueMatch({name: "Scott", age: 47, address: "1717 Tanglewood Ln"},{name: "Robyn", age: 42, address: "1717 Tanglewood Ln"}))
 
-console.log(randomTestData(3));
+// RELEASE 2 DRIVER CODE
+
+var counter=0;
+while (counter < 10){
+	var array_of_strings = randomTestData(10);
+	console.log(counter+1 + ". Here is an array of randomly-generated strings: \n" + array_of_strings + "\n\n");
+	console.log("Here is the longest string from that array: \n" + longestPhrase(array_of_strings) + "\n\n");	
+	counter++;
+}
+
