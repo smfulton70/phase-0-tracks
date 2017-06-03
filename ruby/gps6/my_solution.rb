@@ -1,0 +1,104 @@
+# Virus Predictor
+
+# I worked on this challenge [by myself, with: ].
+# We spent [#] hours on this challenge.
+
+# EXPLANATION OF require_relative
+#
+#require relative is used for passing a local file to the file you are working in
+#where as require is used for files that are not local
+require_relative 'state_data'
+
+class VirusPredictor
+#populates the instance variables upon the creation of the instance
+  def initialize(state_of_origin, population_density, population)
+    @state = state_of_origin
+    @population = population
+    @population_density = population_density
+  end
+#calls predicted deaths and speed of spread methods from below
+  def virus_effects
+    predicted_deaths(@population_density, @population, @state)
+    speed_of_spread(@population_density, @state)
+  end
+
+  private
+#Gives us a hard value of the number of deaths that will occur in a given state
+  def predicted_deaths(population_density, population, state)
+    # predicted deaths is solely based on population density
+    if @population_density >= 200
+      number_of_deaths = (@population * 0.4).floor
+    elsif @population_density >= 150
+      number_of_deaths = (@population * 0.3).floor
+    elsif @population_density >= 100
+      number_of_deaths = (@population * 0.2).floor
+    elsif @population_density >= 50
+      number_of_deaths = (@population * 0.1).floor
+    else
+      number_of_deaths = (@population * 0.05).floor
+    end
+
+    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
+
+  end
+#uses population density to find how fast the virus will spread in a given state.
+  def speed_of_spread(population_density, state) #in months
+    # We are still perfecting our formula here. The speed is also affected
+    # by additional factors we haven't added into this functionality.
+    speed = 0.0
+
+    if @population_density >= 200
+      speed += 0.5
+    elsif @population_density >= 150
+      speed += 1
+    elsif @population_density >= 100
+      speed += 1.5
+    elsif @population_density >= 50
+      speed += 2
+    else
+      speed += 2.5
+    end
+
+    puts " and will spread across the state in #{speed} months.\n\n"
+
+  end
+
+end
+
+#=======================================================================
+
+# DRIVER CODE
+ # initialize VirusPredictor for each state
+
+=begin STATE_DATA = {
+  "Alabama" => {population_density: 94.65, population: 4822023},
+  "Alaska" => {population_density: 1.1111, population: 731449},
+  "Arizona" => {population_density: 57.05, population: 6553255},
+  "Arkansas" => {population_density: 56.43, population: 2949131}
+=end
+
+state_report = []
+STATE_DATA.each do |state_name,population_info|
+  state_report.push(VirusPredictor.new(state_name, population_info[:population_density], population_info[:population]))
+end
+
+state_report.length.times do |index|
+    state_report[index].virus_effects
+end
+
+=begin
+alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+alabama.virus_effects
+
+jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+jersey.virus_effects
+
+california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+california.virus_effects
+
+alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+alaska.virus_effects
+=end
+
+#=======================================================================
+# Reflection Section
