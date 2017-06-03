@@ -18,13 +18,19 @@ class VirusPredictor
   end
 #calls predicted deaths and speed of spread methods from below
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths(self)
+    speed_of_spread(self)
+    # predicted_deaths(@population_density, @population, @state)
+    # speed_of_spread(@population_density, @state)
   end
 
   private
+# If you moved this keyword about virus_effects, you would not be able to call any method in the entire class from driver code outside the class (other
+# than the initialize method that is invoked during object creation).
+
+
 #Gives us a hard value of the number of deaths that will occur in a given state
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths(this)
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -42,7 +48,7 @@ class VirusPredictor
 
   end
 #uses population density to find how fast the virus will spread in a given state.
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread(this) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -69,13 +75,9 @@ end
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
+ # I believe that this code should be done outside of the class, because it is calling a method that is a public method (though
+ # the method calls two other methods that are private)
 
-=begin STATE_DATA = {
-  "Alabama" => {population_density: 94.65, population: 4822023},
-  "Alaska" => {population_density: 1.1111, population: 731449},
-  "Arizona" => {population_density: 57.05, population: 6553255},
-  "Arkansas" => {population_density: 56.43, population: 2949131}
-=end
 
 state_report = []
 STATE_DATA.each do |state_name,population_info|
