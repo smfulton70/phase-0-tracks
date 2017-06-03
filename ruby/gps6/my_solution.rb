@@ -32,15 +32,16 @@ class VirusPredictor
 #Gives us a hard value of the number of deaths that will occur in a given state
   def predicted_deaths(this)
     # predicted deaths is solely based on population density
-    if @population_density >= 200
+    case @population_density
+    when 200..
       number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
+    when 150..200
       number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
+    when 100..150
       number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
+    when 50..100
       number_of_deaths = (@population * 0.1).floor
-    else
+    when 0..50
       number_of_deaths = (@population * 0.05).floor
     end
 
@@ -53,15 +54,16 @@ class VirusPredictor
     # by additional factors we haven't added into this functionality.
     speed = 0.0
 
-    if @population_density >= 200
+    case @population_density
+    when 200..
       speed += 0.5
-    elsif @population_density >= 150
+    when 150..200
       speed += 1
-    elsif @population_density >= 100
+    when 100..150
       speed += 1.5
-    elsif @population_density >= 50
+    when 50..100
       speed += 2
-    else
+    when 0..50
       speed += 2.5
     end
 
