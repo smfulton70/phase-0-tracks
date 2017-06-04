@@ -26,7 +26,8 @@ class VirusPredictor
 
   private
 # If you moved this keyword about virus_effects, you would not be able to call any method in the entire class from driver code outside the class (other
-# than the initialize method that is invoked during object creation).
+# than the initialize method that is invoked during object creation). You would only want to use this method when you want to prohibit
+# calling the method from outside the class. They are basically methods that the calling program does not need to know anything about.
 
 
 #Gives us a hard value of the number of deaths that will occur in a given state
@@ -106,3 +107,20 @@ alaska.virus_effects
 
 #=======================================================================
 # Reflection Section
+# In this case, the outer hash in the State Data uses double quotes to enclose the keys and the hash rockets to assign the value, which
+# is the inner hash. The inner hash uses symbols with the colons, to mimic the appearance of a JSON file.
+
+# require_relative is a method that simply allows the argument to be comprised of the path to the file in relation to where the calling
+# file is. So if it's in the same directory, you can just provide the filename. The require method expects you to define the path to
+# find the file it requires.
+
+# The three ways I know of iterating through a hash are using the methods 'each' (which uses both key and value), and the 'each_key'
+# (which just uses key as an argument) and the 'each_value' (which just uses value as an argument).
+
+# When I refactored the virus_effects method, I realized that the only arguments that were being passed were instance methods, and 
+# nothing else. I scratched my head for a while on this one, trying to figure out how I was supposed to refactor it. Then eventually,
+# it dawned on me that I could just pass 'self' as an argument to both of the other methods.
+
+# I actually think that the refactor of virus_effects probably took me the longest time because I was not sure what was really expected
+# of me, but once I tried 'self' and saw that it worked, I assumed that that was what the potential refactor was. I also feel a lot more
+# comfortable with working with nested hashes as well
