@@ -54,25 +54,62 @@ end
 puts "____________"
 puts "Scott's array of schools, after the change:"
 puts scotts_schools_array
+puts "____________"
 
 # Release 2
+
+puts "Release 2, Arrays"
+puts scotts_schools_array
+puts "____________"
 
 # Iterate through the schools array and removing any school that has fewer than 18 characters.
 scotts_schools_array.delete_if{|school| school.length < 18}
 
+puts "Scott's Array of Schools after schools of length less than 18 have been deleted"
+puts scotts_schools_array
+puts "____________"
+
 # Iterate through the schools array and counts schools whose lengths are 21.
-scotts_schools_array.count{|school| school.length == 21}
+scotts_schools_array.delete_if{|school| school.length != 21}
+
+puts "Scott's Array of Schools after schools of length 21 have been deleted"
+puts scotts_schools_array
+puts "____________"
 
 # Iterate through the schools array and drops schools until it reaches schools whose names DON'T start with "S".
 scotts_schools_array.drop_while{|school| school.start_with?("S")}
 
+puts "Scotts Array of Schools after schools starting with the letter S have been dropped."
+
+puts scotts_schools_array
+# Scott's comment: I have no idea why Sunnyvale Junior High is not removed from the array.
+puts "____________"
+
+
+puts "Release 2, Hashes"
+puts scotts_statuses_hash
+puts "____________"
+
+
 # Iterate through the statuses hash and removing any status whose value is "Scott Fulton".
 scotts_statuses_hash.delete_if{|status,value| value == "Scott Fulton"}
 
-# Iterate through the statuses hash and removing any status whose value has a length of 12.
-scotts_statuses_hash.delete_if{|status,value| value.length == 12}
+puts "Scotts Hash of Status after hash pair with a value of Scott Fulton has been removed."
+puts scotts_statuses_hash
+puts "____________"
 
-# Iterate through the statuses hash and keeps every key/value pair whose value is not 47.
-scotts_statuses_hash.keep_if{|status,value| value != 47}
+# Iterate through the statuses hash and keeping any status whose value is not 000-00-0000.
+scotts_statuses_hash.keep_if{|status,value| value != "000-00-0000"}
 
+puts "Scotts Statuses Hash after all has pairs without a value of 000-00-0000 have been kept."
+puts scotts_statuses_hash
+puts "____________"
 
+# Iterate through the statuses hash and returns every key/value pair whose value is not 47.
+# However it does not change the original array.
+scotts_statuses_hash.select{|status,value| value != 47}
+
+# Iterate through the statuses hash and deletes every key/value pair whose value is not 47.
+scotts_statuses_hash.delete_if{|status,value| value != 47}
+
+puts scotts_statuses_hash
