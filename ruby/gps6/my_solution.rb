@@ -20,8 +20,6 @@ class VirusPredictor
   def virus_effects
     predicted_deaths(self)
     speed_of_spread(self)
-    # predicted_deaths(@population_density, @population, @state)
-    # speed_of_spread(@population_density, @state)
   end
 
   private
@@ -50,11 +48,13 @@ class VirusPredictor
 
   end
 #uses population density to find how fast the virus will spread in a given state.
+
+ 
+=======
   def speed_of_spread(this) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
-
     case @population_density
     when 200..
       speed += 0.5
@@ -67,7 +67,6 @@ class VirusPredictor
     when 0..50
       speed += 2.5
     end
-
     puts " and will spread across the state in #{speed} months.\n\n"
 
   end
@@ -124,3 +123,4 @@ alaska.virus_effects
 # I actually think that the refactor of virus_effects probably took me the longest time because I was not sure what was really expected
 # of me, but once I tried 'self' and saw that it worked, I assumed that that was what the potential refactor was. I also feel a lot more
 # comfortable with working with nested hashes as well
+
