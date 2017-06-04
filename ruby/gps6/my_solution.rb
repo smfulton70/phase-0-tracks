@@ -1,7 +1,8 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Dillon].
+# We spent [1] hours on this challenge.
+# I spent an additional 3 hours after the pairing session.
 
 # EXPLANATION OF require_relative
 #
@@ -27,7 +28,6 @@ class VirusPredictor
 # than the initialize method that is invoked during object creation). You would only want to use this method when you want to prohibit
 # calling the method from outside the class. They are basically methods that the calling program does not need to know anything about.
 
-
 #Gives us a hard value of the number of deaths that will occur in a given state
   def predicted_deaths(this)
     # predicted deaths is solely based on population density
@@ -45,12 +45,8 @@ class VirusPredictor
     end
 
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
-
   end
 #uses population density to find how fast the virus will spread in a given state.
-
- 
-=======
   def speed_of_spread(this) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -68,9 +64,7 @@ class VirusPredictor
       speed += 2.5
     end
     puts " and will spread across the state in #{speed} months.\n\n"
-
   end
-
 end
 
 #=======================================================================
@@ -79,7 +73,6 @@ end
  # initialize VirusPredictor for each state
  # I believe that this code should be done outside of the class, because it is calling a method that is a public method (though
  # the method calls two other methods that are private)
-
 
 state_report = []
 STATE_DATA.each do |state_name,population_info|
@@ -93,13 +86,10 @@ end
 =begin
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
-
 jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
 jersey.virus_effects
-
 california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
 california.virus_effects
-
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
 =end
@@ -122,5 +112,5 @@ alaska.virus_effects
 
 # I actually think that the refactor of virus_effects probably took me the longest time because I was not sure what was really expected
 # of me, but once I tried 'self' and saw that it worked, I assumed that that was what the potential refactor was. I also feel a lot more
-# comfortable with working with nested hashes as well
+# comfortable with working with nested hashes as well.
 
