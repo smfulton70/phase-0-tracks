@@ -48,4 +48,4 @@ FROM
 WHERE
 	businesses.id = 3 AND businesses.id = reviews.user_id AND reviews.user_id = users.user_id;
 
-Result: Angela|Jolie|Lotus Yoga|1|Smellly yoga mats!
+Result: Angela|Jolie|Lotus Yoga|1|Smelly yoga mats!
