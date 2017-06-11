@@ -1,0 +1,111 @@
+
+RELEASE 2
+---------
+
+1. SELECT * FROM usStates;
+
+Output:
+California|39250017|163396|FALSE|Sacramento, CA
+Kentucky|4436974|40409|TRUE|Frankfort, KY
+Nevada|2940058|110577|FALSE|Carson City, NV
+Oregon|4093465|98381|FALSE|Salem, OR
+Washington|7288000|71362|FALSE|Olympia, WA
+
+SELECT * FROM capitalCities;
+
+Output:
+Olympia, WA|46478|Cheryl Selby|1930|O-Town
+Frankfort, KY|25527|William May|1805|Mainhattan
+Sacramento, CA|493025|Darrell Steinberg|1821|America's Farm-to-Fork Capital
+Salem, OR|154637|Chuck Bennett|1812|The Cherry City
+Carson City, NV|54521|Bob Crowell|1829|CC
+
+2. UPDATE capitalCities SET nickname="Sactown" WHERE name="Sacramento, CA";
+   SELECT * FROM capitalCities;
+
+Output:
+Olympia, WA|46478|Cheryl Selby|1930|O-Town
+Frankfort, KY|25527|William May|1805|Mainhattan
+Sacramento, CA|493025|Darrell Steinberg|1821|Sactown
+Salem, OR|154637|Chuck Bennett|1812|The Cherry City
+Carson City, NV|54521|Bob Crowell|1829|CC
+
+3. SELECT * FROM usStates, capitalCities WHERE usStates.capitalCity = capitalCities.name;
+
+Output:
+California|39250017|163396|FALSE|Sacramento, CA|Sacramento, CA|493025|Darrell Steinberg|1821|Sactown
+Kentucky|4436974|40409|TRUE|Frankfort, KY|Frankfort, KY|25527|William May|1805|Mainhattan
+Nevada|2940058|110577|FALSE|Carson City, NV|Carson City, NV|54521|Bob Crowell|1829|CC
+Oregon|4093465|98381|FALSE|Salem, OR|Salem, OR|154637|Chuck Bennett|1812|The Cherry City
+Washington|7288000|71362|FALSE|Olympia, WA|Olympia, WA|46478|Cheryl Selby|1930|O-Town
+
+SELECT players.name, teams.name FROM players JOIN teams ON players.team_id = teams.id;
+
+4. SELECT usStates.name, usStates.population, capitalCities.name, capitalCities.population FROM capitalCities JOIN usStates ON usStates.capitalCity = capitalCities.name;
+
+OR
+
+SELECT usStates.name, usStates.population, capitalCities.name, capitalCities.population FROM capitalCities, usStates WHERE usStates.capitalCity = capitalCities.name;
+
+Give the exact same output.
+
+Output:
+Washington|7288000|Olympia, WA|46478
+Kentucky|4436974|Frankfort, KY|25527
+California|39250017|Sacramento, CA|493025
+Oregon|4093465|Salem, OR|154637
+Nevada|2940058|Carson City, NV|54521
+
+5. DELETE FROM usStates WHERE commonwealth="TRUE";
+   SELECT * FROM usStates;
+
+Output:
+California|39250017|163396|FALSE|Sacramento, CA
+Nevada|2940058|110577|FALSE|Carson City, NV
+Oregon|4093465|98381|FALSE|Salem, OR
+Washington|7288000|71362|FALSE|Olympia, WA
+
+RELEASE 3
+---------
+Using table aliases:
+
+SELECT S.name, S.population, S.commonwealth,
+	C.name, C.population, C.nickname
+FROM usStates S
+	INNER JOIN capitalCities C
+ON S.capitalCity=C.name;
+
+Output:
+California|39250017|FALSE|Sacramento, CA|493025|Sactown
+Nevada|2940058|FALSE|Carson City, NV|54521|CC
+Oregon|4093465|FALSE|Salem, OR|154637|The Cherry City
+Washington|7288000|FALSE|Olympia, WA|46478|O-Town
+
+Join of Non-equality. Join the tables and return the rows where state area in square miles is less than the population of the state capital
+
+SELECT usStates.name, usStates.area,
+	capitalCities.name, capitalCities.population
+FROM usStates
+	INNER JOIN capitalCities
+ON usStates.capitalCity = capitalCities.name
+WHERE usStates.area < capitalCities.population;
+
+Output:
+California|163696|Sacramento, CA|493025
+Oregon|98381|Salem, OR|154637
+
+Left Outer Join
+
+SELECT usStates.name, usStates.population, usStates.commonwealth,
+	capitalCities.name, capitalCities.population, capitalCities.nickname
+FROM usStates
+	LEFT OUTER JOIN capitalCities
+ON usStates.capitalCity=capitalCities.name;
+
+Output:
+California|39250017|FALSE|Sacramento, CA|493025|Sactown
+Nevada|2940058|FALSE|Carson City, NV|54521|CC
+Oregon|4093465|FALSE|Salem, OR|154637|The Cherry City
+Washington|7288000|FALSE|Olympia, WA|46478|O-Town
+Idaho|1683140|FALSE|||
+
