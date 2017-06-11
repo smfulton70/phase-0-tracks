@@ -67,4 +67,45 @@ Washington|7288000|71362|FALSE|Olympia, WA
 
 RELEASE 3
 ---------
+Using table aliases:
+
+SELECT S.name, S.population, S.commonwealth,
+	C.name, C.population, C.nickname
+FROM usStates S
+	INNER JOIN capitalCities C
+ON S.capitalCity=C.name;
+
+Output:
+California|39250017|FALSE|Sacramento, CA|493025|Sactown
+Nevada|2940058|FALSE|Carson City, NV|54521|CC
+Oregon|4093465|FALSE|Salem, OR|154637|The Cherry City
+Washington|7288000|FALSE|Olympia, WA|46478|O-Town
+
+Join of Non-equality. Join the tables and return the rows where state area in square miles is less than the population of the state capital
+
+SELECT usStates.name, usStates.area,
+	capitalCities.name, capitalCities.population
+FROM usStates
+	INNER JOIN capitalCities
+ON usStates.capitalCity = capitalCities.name
+WHERE usStates.area < capitalCities.population;
+
+Output:
+California|163696|Sacramento, CA|493025
+Oregon|98381|Salem, OR|154637
+
+Left Outer Join
+
+SELECT usStates.name, usStates.population, usStates.commonwealth,
+	capitalCities.name, capitalCities.population, capitalCities.nickname
+FROM usStates
+	LEFT OUTER JOIN capitalCities
+ON usStates.capitalCity=capitalCities.name;
+
+Output:
+California|39250017|FALSE|Sacramento, CA|493025|Sactown
+Nevada|2940058|FALSE|Carson City, NV|54521|CC
+Oregon|4093465|FALSE|Salem, OR|154637|The Cherry City
+Washington|7288000|FALSE|Olympia, WA|46478|O-Town
+Idaho|1683140|FALSE|||
 
