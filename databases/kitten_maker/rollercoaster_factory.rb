@@ -106,8 +106,10 @@ rollercoasters = db.execute("SELECT * FROM rollercoasters")
 
 #Print to console a short paragraph about each rollercoaster in the database
 rollercoasters.each do |rollercoaster|
+	puts
 	print "#{rollercoaster['coaster_name']} is located in the park called #{rollercoaster['park']} in #{rollercoaster['location']}. It opened in #{rollercoaster['year_opened']} and it has #{rollercoaster['number_of_loops']} loops. It is #{rollercoaster['height_in_feet']} feet tall,"
 	print boolean_string(rollercoaster)
+	puts
 end
 
 #Start off a query string
@@ -167,12 +169,15 @@ puts "--------------------ROLLERCOASTER UPDATES-----------------------------"
 puts
 puts "Once again, here is the list of rollercoasters currently in the database."
 puts "Are there any modifications that you would like to make to the table full of rollercoasters?"
+puts
 
 rollercoasters.each do |rollercoaster|
   puts "#{rollercoaster['coaster_name']}, #{rollercoaster['park']}, #{rollercoaster['location']}, #{rollercoaster['year_opened']}, #{rollercoaster['number_of_loops']}, #{rollercoaster['height_in_feet']}, #{rollercoaster['floorless']}, #{rollercoaster['wooden']}"
+  puts
 end
 
-print "If so, please type in the name of the rollercoaster here: "
+
+puts "If so, please type in the name of the rollercoaster here: "
 coaster_to_modify = gets.chomp
 modify_coaster(db, coaster_to_modify)
 
