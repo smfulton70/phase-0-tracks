@@ -8,13 +8,13 @@ list[0].style.listStyleType = "square";
 //and change the text to magenta. Moving the mouse out changes the text and picture back.
 
 function swapPicture(event) {
-	event.target.src = "scott_2.jpg";
+	event.target.src = "https://github.com/smfulton70/phase-0-tracks/blob/master/web_dev/client_side_js/scott_2.jpg";
 	var text=document.getElementById("text");
 	text.style.color="magenta";
 }
 
 function swapPictureBack(event) {
-	event.target.src = "scott_1.jpg";
+	event.target.src = "https://github.com/smfulton70/phase-0-tracks/blob/master/web_dev/client_side_js/scott_1.jpg";
 	text.style.color="black";
 }
 
