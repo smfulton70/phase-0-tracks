@@ -17,3 +17,15 @@ My plan to learn Jquery:
  be able to remember what I read.
 
  -As I approach the two-hour mark, I will see if there are any online tests that I can take that will assess my knowledge to see if I'm on track.
+
+ RELEASE 1:
+
+ -Well, my first plan of attack was starting the Codeacademy.com course in jQuery. It claimed that the course was about 3 hours long. Well, I spent a good hour on the class on Codeacademy.com, even though it was recommended that we not use it exclusively. It really tested me to get the syntax correct on typing the
+
+ $(document).ready(function(){
+
+ });
+
+ correctly. It constantly gave me feedback (purposely vague) on what I did incorrect, and so I was forced to look at my code very carefully to see where I made errors.
+
+ -After an hour on codeacademy.com, I decided to take a look at what w3schools.com had in the way of a jQuery tutorial. I spent a good 40 minutes on that site, working through the tutorials that covered: Intro, Get Started, Syntax, Selectors, and Events. I think that was also time well-spent. I then went to Google and started googling jQuery tutorials, and found a really good PDF on tutorialspoint.com that is pretty much a book on jQuery. I took a scan through it and felt that it was definitely good enough for our purposes. I went through and made other bookmarks on other resources that are jQuery-related.
