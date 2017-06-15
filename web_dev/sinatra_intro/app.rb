@@ -12,6 +12,20 @@ get '/' do
   "#{params[:name]} is #{params[:age]} years old."
 end
 
+get '/contact' do
+  "1717 Tanglewood Ln<br />Roseville, CA 95661"
+end
+
+get '/great_job/:personname' do
+  person_name = params[:personname]
+  if person_name
+    "Good job, #{person_name}."
+  else
+    "Good job, random person!"
+  end
+end
+
+
 # write a GET route with
 # route parameters
 get '/about/:person' do
